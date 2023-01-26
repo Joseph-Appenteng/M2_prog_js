@@ -1,89 +1,118 @@
-class App
-{
-    runApplication()
-   {
-    let canvas = document.getElementById("canvasId")
+class App {
+  runApplication() {
+    let canvas = document.getElementById("canvasId");
+    let title = document.getElementById("title");
+    console.log(title);
+    console.log(canvas);
     let g = canvas.getContext("2d");
-    //vorm tekenen
-    g.beginPath()
-    g.fillStyle = "orange";
-    g.moveTo(150,50);
-    g.lineTo(100,150);
-    g.lineTo(300,200);
-    g.lineTo(350,100);
+    this.huis(400, 100, g);
+    this.huis(300, 150, g);
+    this.straat(100, 250, g);
+    this.straat(300, 150, g);
+    this.sneewman(0, 0, g);
+    this.sneewman(100, -50, g);
+    this.sneewman(200, -100, g);
+    this.boom(100,250,g)
+    this.boom(300,150,g)
+  }
+ 
+  huis(x, y, g) {
+    g.beginPath();
+    g.fillStyle = "white";
+    g.moveTo(x + 150, y + 50);
+    g.lineTo(x + 100, y + 150);
+    g.lineTo(x + 300, y + 200);
+    g.lineTo(x + 350, y + 100);
     g.closePath();
     g.stroke();
-    g.fill()
-
-    g.beginPath()
-    g.fillStyle = "blue";
-    g.moveTo(350,100);
-    g.lineTo(400,150);
-    g.lineTo(400,250);
-    g.lineTo(300,300);
-    g.lineTo(100,250);
-    g.lineTo(100,150);
-    g.lineTo(300,200);
-    g.closePath();
-    g.stroke();
-    g.fill()
-
-    g.beginPath()
-    g.moveTo(400,150);
-    g.lineTo(300,200);
-    g.lineTo(300,300);
-    g.lineTo(400,250);
-    g.closePath();
-    g.stroke();
-
-    g.beginPath()
-    g.moveTo(125,175);
-    g.lineTo(275,212,5);
-    g.lineTo(275,262,5);
-    g.lineTo(125,225);
-    g.closePath();
-    g.stroke();
+    g.fill();
 
     g.beginPath();
-    let randomgetal = Math.random();
-    console.log(randomgetal);
-    if (randomgetal < 0.5) {
-      g.fillStyle = "yellow";
-    } else {
-      g.fillStyle = "pink";
-    }
-    g.moveTo(125,175);
-    g.lineTo(275,212,5);
-    g.lineTo(275,262,5);
-    g.lineTo(125,225);
+    g.fillStyle = "aquamarine";
+    g.moveTo(x + 350, y + 100);
+    g.lineTo(x + 400, y + 150);
+    g.lineTo(x + 400, y + 250);
+    g.lineTo(x + 300, y + 300);
+    g.lineTo(x + 100, y + 250);
+    g.lineTo(x + 100, y + 150);
+    g.lineTo(x + 300, y + 200);
     g.closePath();
     g.stroke();
-    g.fill()
+    g.fill();
 
-    g.beginPath()
-    g.moveTo(200,193,5);
-    g.lineTo(200,243,5);
-    g.closePath();
-    g.stroke();
-
-    g.beginPath()
-    g.moveTo(125,200);
-    g.lineTo(275,237,5);
-    g.closePath();
-    g.stroke();
-
-    g.beginPath()
+    g.beginPath();
     g.fillStyle = "white";
-    g.moveTo(325,217,5);
-    g.lineTo(380,190);
-    g.lineTo(380,260);
-    g.lineTo(325,287,5);
+    g.moveTo(x + 125, y + 175);
+    g.lineTo(x + 275, y + 212, 5);
+    g.lineTo(x + 275, y + 262, 5);
+    g.lineTo(x + 125, y + 225);
     g.closePath();
     g.stroke();
-    g.fill()
-    console.log("hello world!")
-    console.log(canvas)
-   }
+    g.fill();
+
+    g.beginPath();
+    g.fillStyle = "white";
+    g.moveTo(x + 325, y + 217, 5);
+    g.lineTo(x + 380, y + 190);
+    g.lineTo(x + 380, y + 260);
+    g.lineTo(x + 325, y + 287, 5);
+    g.closePath();
+    g.stroke();
+    g.fill();
+  }
+
+  straat(x, y, g) {
+    g.beginPath();
+    g.fillStyle = "wite";
+    g.moveTo(x + 600, y + 150);
+    g.lineTo(x + 900, y + 100);
+    g.lineTo(x + 600, y + 300);
+    g.lineTo(x + 300, y + 300);
+    g.lineTo(x + 600, y + 150);
+    g.closePath();
+    g.stroke();
+    g.fill();
+  }
+  sneewman(x, y, g) {
+    g.beginPath();
+    g.fillStyle = "white";
+    g.arc(x + 525, y + 395, 15, 0, 2 * Math.PI);
+    g.stroke();
+    g.fill();
+
+    g.beginPath();
+    g.fillStyle = "white";
+    g.arc(x + 525, y + 430, 20, 0, 2 * Math.PI);
+    g.stroke();
+    g.fill();
+
+    g.beginPath();
+    g.fillStyle = "white";
+    g.arc(x + 525, y + 480, 30, 0, 2 * Math.PI);
+    g.stroke();
+    g.fill();
+
+    g.beginPath();
+    g.fillStyle = "Black";
+    g.arc(x + 512, y + 390, 2, 0, 2 * Math.PI);
+    g.stroke();
+    g.fill();
+
+    g.beginPath();
+    g.fillStyle = "Black";
+    g.arc(x + 537, y + 390, 2, 0, 2 * Math.PI);
+    g.stroke();
+    g.fill();
+
+    g.beginPath();
+    g.fillStyle = "Orange";
+    g.moveTo(x + 525, y + 395);
+    g.lineTo(x + 525, y + 405);
+    g.lineTo(x + 550, y + 400);
+    g.closePath();
+    g.stroke();
+    g.fill();
+  }
 }
 
 let app = new App();
